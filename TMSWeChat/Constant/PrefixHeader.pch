@@ -1,0 +1,51 @@
+//
+//  PrefixHeader.pch
+//  TMSWeChat
+//
+//  Created by TmmmS on 2019/5/18.
+//  Copyright © 2019年 TMS. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// UI helper
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+
+// 随机色
+#define TMSRandomColor MHColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+
+// 设置图片
+#define TMSImageNamed(__imageName) [UIImage imageNamed:__imageName]
+
+// 输出日志 (格式: [时间] [哪个方法] [哪行] [输出内容])
+#ifdef DEBUG
+#define NSLog(format, ...) printf("\n[%s] %s [第%d行] 💕 %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSString stringWithFormat:format, ##__VA_ARGS__] UTF8String]);
+#else
+#define NSLog(format, ...)
+#endif
+
+// 日记输出宏
+#ifdef DEBUG // 调试状态, 打开LOG功能
+#define TLog(...) NSLog(__VA_ARGS__)
+#else // 发布状态, 关闭LOG功能
+#define TLog(...)
+#endif
+
+// 销毁打印
+#define TMSDealloc MHLog(@"\n =========+++ %@  销毁了 +++======== \n",[self class])
+
+// common include
+#ifdef __OBJC__
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <Masonry/Masonry.h>
+#import <ReactiveObjC/ReactiveObjC.h>
+
+#import "TMSConstant.h"
+
+#endif
+
+#endif /* PrefixHeader_pch */

@@ -13,6 +13,7 @@
 		1A2DB642228FD43E00378AFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2DB641228FD43E00378AFD /* Assets.xcassets */; };
 		1A2DB645228FD43E00378AFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2DB643228FD43E00378AFD /* LaunchScreen.storyboard */; };
 		1A2DB648228FD43E00378AFD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2DB647228FD43E00378AFD /* main.m */; };
+		1A2DB659228FE3DA00378AFD /* TMSConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2DB658228FE3DA00378AFD /* TMSConstant.m */; };
 		58C93A7C6C852F755B77B60D /* libPods-TMSWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA0A08A784CC95EE47BCC77 /* libPods-TMSWeChat.a */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,9 @@
 		1A2DB644228FD43E00378AFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A2DB646228FD43E00378AFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A2DB647228FD43E00378AFD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1A2DB656228FDEC900378AFD /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		1A2DB657228FE3DA00378AFD /* TMSConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMSConstant.h; sourceTree = "<group>"; };
+		1A2DB658228FE3DA00378AFD /* TMSConstant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMSConstant.m; sourceTree = "<group>"; };
 		439FAE18F547D9C3ED6CD9CF /* Pods-TMSWeChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMSWeChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TMSWeChat/Pods-TMSWeChat.debug.xcconfig"; sourceTree = "<group>"; };
 		84CBC97B541519788927A9BC /* Pods-TMSWeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMSWeChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-TMSWeChat/Pods-TMSWeChat.release.xcconfig"; sourceTree = "<group>"; };
 		9BA0A08A784CC95EE47BCC77 /* libPods-TMSWeChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TMSWeChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +78,9 @@
 		1A2DB637228FD43C00378AFD /* TMSWeChat */ = {
 			isa = PBXGroup;
 			children = (
+				1A2DB650228FDDED00378AFD /* Helper */,
+				1A2DB64F228FDDD000378AFD /* Constant */,
+				1A2DB64E228FDD7600378AFD /* Modules */,
 				1A2DB638228FD43C00378AFD /* AppDelegate.h */,
 				1A2DB639228FD43C00378AFD /* AppDelegate.m */,
 				1A2DB63B228FD43C00378AFD /* ViewController.h */,
@@ -85,6 +92,62 @@
 				1A2DB647228FD43E00378AFD /* main.m */,
 			);
 			path = TMSWeChat;
+			sourceTree = "<group>";
+		};
+		1A2DB64E228FDD7600378AFD /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				1A2DB654228FDE6700378AFD /* Controller */,
+				1A2DB653228FDE6200378AFD /* View */,
+				1A2DB652228FDE5C00378AFD /* Model */,
+				1A2DB651228FDE2200378AFD /* ViewModel */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		1A2DB64F228FDDD000378AFD /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				1A2DB657228FE3DA00378AFD /* TMSConstant.h */,
+				1A2DB658228FE3DA00378AFD /* TMSConstant.m */,
+				1A2DB656228FDEC900378AFD /* PrefixHeader.pch */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		1A2DB650228FDDED00378AFD /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		1A2DB651228FDE2200378AFD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1A2DB652228FDE5C00378AFD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1A2DB653228FDE6200378AFD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1A2DB654228FDE6700378AFD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		651D2C19B2E9997BAEB7CE24 /* Frameworks */ = {
@@ -189,6 +252,7 @@
 			files = (
 				1A2DB63D228FD43C00378AFD /* ViewController.m in Sources */,
 				1A2DB648228FD43E00378AFD /* main.m in Sources */,
+				1A2DB659228FE3DA00378AFD /* TMSConstant.m in Sources */,
 				1A2DB63A228FD43C00378AFD /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,6 +320,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -313,6 +378,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -333,8 +399,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/TMSWeChat/Constant/PrefixHeader.pch";
 				INFOPLIST_FILE = TMSWeChat/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = TMS.TMSWeChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -347,8 +419,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/TMSWeChat/Constant/PrefixHeader.pch";
 				INFOPLIST_FILE = TMSWeChat/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = TMS.TMSWeChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
