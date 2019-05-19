@@ -13,8 +13,10 @@
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 
+#define RGB(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+#define UIColorFromHex(s) [UIColor colorWithRed:(((s & 0xFF0000) >> 16 )) / 255.0 green:((( s & 0xFF00 ) >> 8 )) / 255.0 blue:(( s & 0xFF )) / 255.0 alpha:1.0]
 // 随机色
-#define TMSRandomColor MHColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+#define TMSRandomColor RGB(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256), 1)
 
 // 设置图片
 #define TMSImageNamed(__imageName) [UIImage imageNamed:__imageName]
@@ -43,6 +45,8 @@
 #import <UIKit/UIKit.h>
 #import <Masonry/Masonry.h>
 #import <ReactiveObjC/ReactiveObjC.h>
+#import <IGListKit.h>
+#import <MJExtension.h>
 
 #import "TMSConstant.h"
 

@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "TMSDiscoverViewModel.h"
+#import "TMSDiscoverViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +18,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    TMSDiscoverViewController *vc = [[TMSDiscoverViewController alloc] initWtihViewModel:[[TMSDiscoverViewModel alloc] init]];
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:vc];
+    
+    self.window.rootViewController = navi;
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

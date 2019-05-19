@@ -6,4 +6,8 @@
 //  Copyright © 2019年 TMS. All rights reserved.
 //
 
-CGFloat const TMSStickerTopInset = 12.0;
+CGFloat const cellPadding = 10.0;
+
+CGFloat const cellItemInset = 12.0;
+
+CGFloat const cellPicInset = 5.0;

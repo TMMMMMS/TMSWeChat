@@ -1,0 +1,27 @@
+//
+//  TMSDiscoverModel.h
+//  TMSWeChat
+//
+//  Created by TmmmS on 2019/5/19.
+//  Copyright © 2019年 TMS. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface TMSDiscoverModel : NSObject <IGListDiffable>
+@property(nonatomic, copy) NSString *ID;
+@property(nonatomic, copy) NSString *summary;
+@property(nonatomic, copy) NSString *author_name;
+@property(nonatomic, assign) NSInteger time;
+@property(nonatomic, assign) NSInteger comment_num;
+@property(nonatomic, assign) NSInteger pic_num;
+@property(nonatomic, assign) NSInteger likes_num;
+
+#pragma mark - support property
+// 分区个数，TMSDiscoverSectionController中使用
+@property(nonatomic, assign) NSInteger numOfSection;
+@end
+
+NS_ASSUME_NONNULL_END
