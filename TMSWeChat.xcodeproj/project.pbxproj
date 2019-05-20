@@ -30,6 +30,9 @@
 		1A59B28322912776006534DD /* TMSLikeCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A59B28222912776006534DD /* TMSLikeCollectionCell.m */; };
 		1A59B28622912788006534DD /* TMSCommentCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A59B28522912788006534DD /* TMSCommentCollectionCell.m */; };
 		1A59B28A22918F64006534DD /* TMSPicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A59B28922918F64006534DD /* TMSPicView.m */; };
+		1AF44A9422927F9F00CCC021 /* TMSCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF44A9322927F9F00CCC021 /* TMSCommentModel.m */; };
+		1AF44A972292801200CCC021 /* TMSCommentSectionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF44A962292801200CCC021 /* TMSCommentSectionViewModel.m */; };
+		1AF44A9B2292875C00CCC021 /* TMSCommentSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF44A9A2292875C00CCC021 /* TMSCommentSectionController.m */; };
 		58C93A7C6C852F755B77B60D /* libPods-TMSWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA0A08A784CC95EE47BCC77 /* libPods-TMSWeChat.a */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +81,12 @@
 		1A59B28522912788006534DD /* TMSCommentCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMSCommentCollectionCell.m; sourceTree = "<group>"; };
 		1A59B28822918F64006534DD /* TMSPicView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMSPicView.h; sourceTree = "<group>"; };
 		1A59B28922918F64006534DD /* TMSPicView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMSPicView.m; sourceTree = "<group>"; };
+		1AF44A9222927F9F00CCC021 /* TMSCommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMSCommentModel.h; sourceTree = "<group>"; };
+		1AF44A9322927F9F00CCC021 /* TMSCommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMSCommentModel.m; sourceTree = "<group>"; };
+		1AF44A952292801200CCC021 /* TMSCommentSectionViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMSCommentSectionViewModel.h; sourceTree = "<group>"; };
+		1AF44A962292801200CCC021 /* TMSCommentSectionViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMSCommentSectionViewModel.m; sourceTree = "<group>"; };
+		1AF44A992292875C00CCC021 /* TMSCommentSectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMSCommentSectionController.h; sourceTree = "<group>"; };
+		1AF44A9A2292875C00CCC021 /* TMSCommentSectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMSCommentSectionController.m; sourceTree = "<group>"; };
 		439FAE18F547D9C3ED6CD9CF /* Pods-TMSWeChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMSWeChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TMSWeChat/Pods-TMSWeChat.debug.xcconfig"; sourceTree = "<group>"; };
 		84CBC97B541519788927A9BC /* Pods-TMSWeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMSWeChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-TMSWeChat/Pods-TMSWeChat.release.xcconfig"; sourceTree = "<group>"; };
 		9BA0A08A784CC95EE47BCC77 /* libPods-TMSWeChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TMSWeChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +189,8 @@
 			children = (
 				1A59B25422910DFB006534DD /* TMSDiscoverModel.h */,
 				1A59B25522910DFB006534DD /* TMSDiscoverModel.m */,
+				1AF44A9222927F9F00CCC021 /* TMSCommentModel.h */,
+				1AF44A9322927F9F00CCC021 /* TMSCommentModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -201,6 +212,8 @@
 				1A59B24D22910991006534DD /* TMSDiscoverViewController.m */,
 				1A59B25722911674006534DD /* TMSDiscoverSectionController.h */,
 				1A59B25822911674006534DD /* TMSDiscoverSectionController.m */,
+				1AF44A992292875C00CCC021 /* TMSCommentSectionController.h */,
+				1AF44A9A2292875C00CCC021 /* TMSCommentSectionController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -222,6 +235,8 @@
 				1A59B25222910D0D006534DD /* TMSDiscoverViewModel.m */,
 				1A59B25A229116BA006534DD /* TMSDiscoverSectionViewModel.h */,
 				1A59B25B229116BA006534DD /* TMSDiscoverSectionViewModel.m */,
+				1AF44A952292801200CCC021 /* TMSCommentSectionViewModel.h */,
+				1AF44A962292801200CCC021 /* TMSCommentSectionViewModel.m */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -368,6 +383,7 @@
 				1A59B24E22910991006534DD /* TMSDiscoverViewController.m in Sources */,
 				1A2DB648228FD43E00378AFD /* main.m in Sources */,
 				1A2DB659228FE3DA00378AFD /* TMSConstant.m in Sources */,
+				1AF44A972292801200CCC021 /* TMSCommentSectionViewModel.m in Sources */,
 				1A59B25C229116BA006534DD /* TMSDiscoverSectionViewModel.m in Sources */,
 				1A59B25622910DFB006534DD /* TMSDiscoverModel.m in Sources */,
 				1A59B26B22912075006534DD /* TMSDiscoverCollectionCell.m in Sources */,
@@ -378,6 +394,8 @@
 				1A59B274229126E9006534DD /* TMSTimeCollectionCellViewModel.m in Sources */,
 				1A2DB63A228FD43C00378AFD /* AppDelegate.m in Sources */,
 				1A59B26E22912532006534DD /* TMSBaseCellViewModel.m in Sources */,
+				1AF44A9422927F9F00CCC021 /* TMSCommentModel.m in Sources */,
+				1AF44A9B2292875C00CCC021 /* TMSCommentSectionController.m in Sources */,
 				1A59B25922911674006534DD /* TMSDiscoverSectionController.m in Sources */,
 				1A59B277229126FE006534DD /* TMSLikeCollectionCellViewModel.m in Sources */,
 				1A59B27A2291270E006534DD /* TMSCommentCollectionCellViewModel.m in Sources */,

@@ -1,8 +1,8 @@
 //
-//  TMSDiscoverSectionController.h
+//  TMSCommentSectionController.h
 //  TMSWeChat
 //
-//  Created by TmmmS on 2019/5/19.
+//  Created by TmmmS on 2019/5/20.
 //  Copyright © 2019年 TMS. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TMSDiscoverSectionController : IGListSectionController
+@interface TMSCommentSectionController : IGListSectionController
 
 @end
 

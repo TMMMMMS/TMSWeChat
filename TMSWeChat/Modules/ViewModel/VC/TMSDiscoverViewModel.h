@@ -13,7 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TMSDiscoverViewModel : NSObject
-@property(nonatomic, readonly, strong) NSArray <TMSDiscoverSectionViewModel <IGListDiffable>*>*discovers;
+@property(nonatomic, readonly, strong) NSArray *discovers;
 @end
 
 NS_ASSUME_NONNULL_END

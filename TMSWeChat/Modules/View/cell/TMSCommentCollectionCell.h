@@ -7,11 +7,12 @@
 //
 
 #import "TMSDiscoverCollectionCell.h"
+@class TMSCommentCollectionCellViewModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TMSCommentCollectionCell : TMSDiscoverCollectionCell
-
+@property(nonatomic, readonly, strong) TMSCommentCollectionCellViewModel *viewModel;
 @end
 
 NS_ASSUME_NONNULL_END

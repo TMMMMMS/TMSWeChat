@@ -11,6 +11,7 @@
 
 @interface TMSLikeCollectionCell ()
 @property(nonatomic, strong) YYLabel *likeLabel;
+@property(nonatomic, strong) UIView *line;
 @property(nonatomic, readwrite, strong) TMSLikeCollectionCellViewModel *viewModel;
 @end
 
@@ -29,6 +30,7 @@
     self.viewModel = viewModel;
     
     self.likeLabel.attributedText = viewModel.likeUserAttributedString;
+    self.line.hidden = viewModel.hiddenSeperateLine;
 }
 
 - (void)configViews {
@@ -54,7 +56,6 @@
     CGFloat leftPadding = cellPadding + 42 + cellItemInset * 4 + 12;
     self.likeLabel = [[YYLabel alloc] init];
     self.likeLabel.textVerticalAlignment = YYTextVerticalAlignmentTop;
-    self.likeLabel.attributedText = self.viewModel.likeUserAttributedString;
     self.likeLabel.numberOfLines = 0;
     self.likeLabel.preferredMaxLayoutWidth = SCREEN_WIDTH - leftPadding - cellPadding - cellItemInset;
     [container addSubview:self.likeLabel];
@@ -66,13 +67,14 @@
         make.bottom.equalTo(container).offset(-6);
     }];
     
-//    UIView *line = [[UIView alloc] init];
-//    line.backgroundColor = RGB(211, 211, 213, 1);
-//    [container addSubview:line];
-//    [line mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.right.bottom.equalTo(container);
-//        make.height.equalTo(@0.5);
-//    }];
+    self.line = [[UIView alloc] init];
+    self.line.backgroundColor = RGB(211, 211, 213, 1);
+    self.line.hidden = YES;
+    [container addSubview:self.line];
+    [self.line mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.equalTo(container);
+        make.height.equalTo(@0.5);
+    }];
 }
 
 @end

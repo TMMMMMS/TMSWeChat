@@ -8,6 +8,7 @@
 
 #import "TMSDiscoverViewModel.h"
 #import "TMSDiscoverSectionViewModel.h"
+#import "TMSCommentSectionViewModel.h"
 #import "TMSDiscoverModel.h"
 
 @interface TMSDiscoverViewModel ()
@@ -34,13 +35,21 @@
     NSArray *temp = dic[@"data"][@"list"];
     temp = [TMSDiscoverModel mj_objectArrayWithKeyValuesArray:temp];
     
-    NSArray *itemArray = [temp.rac_sequence map:^TMSDiscoverSectionViewModel *(TMSDiscoverModel *model) {
-
+    NSMutableArray *itemArray = [NSMutableArray array];
+    for (TMSDiscoverModel *model in temp) {
         TMSDiscoverSectionViewModel *itemModel = [[TMSDiscoverSectionViewModel alloc] initWithDiscoverModel:model];
-        return itemModel;
-    }].array;
+        TMSCommentSectionViewModel *commentModel = [[TMSCommentSectionViewModel alloc] initWithDiscoverModel:model];
+        [itemArray addObject:itemModel];
+        [itemArray addObject:commentModel];
+    }
+    
+//    NSArray *itemArray = [temp.rac_sequence map:^TMSDiscoverSectionViewModel *(TMSDiscoverModel *model) {
+//
+//        TMSDiscoverSectionViewModel *itemModel = [[TMSDiscoverSectionViewModel alloc] initWithDiscoverModel:model];
+//        return itemModel;
+//    }].array;
 
-    self.discovers = itemArray;
+    self.discovers = itemArray.copy;
 }
 
 

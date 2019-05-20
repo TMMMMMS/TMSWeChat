@@ -15,6 +15,13 @@
     return @{@"ID": @"id"};
 }
 
++ (NSDictionary *)mj_objectClassInArray
+{
+    return @{
+             @"comments":@"TMSCommentModel"
+             };
+}
+
 //- (NSInteger)pic_num {
 //    
 ////    int x = 0;
@@ -38,7 +45,7 @@
     return _like_user;
 }
 
-// 生成l点赞的用户名
+// 生成点赞的用户名
 - (NSString *)randomNoNumber: (int)len {
     
     char ch[len];
@@ -52,21 +59,21 @@
     return [[NSString alloc] initWithBytes:ch length:len encoding:NSUTF8StringEncoding];
 }
 
-- (NSInteger)numOfSection {
-    
-    // 初始值设为2：内容section + 时间section
-    int num = 2;
-    
-    if (self.likes_num > 0) {
-        num++;
-    }
-    
-    if (self.comment_num > 0) {
-        num++;
-    }
-    
-    return num;
-}
+//- (NSInteger)numOfSection {
+//    
+//    // 初始值设为2：内容section + 时间section
+//    int num = 2;
+//    
+//    if (self.likes_num > 0) {
+//        num++;
+//    }
+//    
+////    if (self.comment_num > 0) {
+////        num++;
+////    }
+//    
+//    return num;
+//}
 
 - (nonnull id<NSObject>)diffIdentifier {
     return self.ID;

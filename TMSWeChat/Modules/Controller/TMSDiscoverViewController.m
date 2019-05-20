@@ -8,7 +8,9 @@
 
 #import "TMSDiscoverViewController.h"
 #import "TMSDiscoverSectionController.h"
+#import "TMSCommentSectionController.h"
 #import "TMSDiscoverViewModel.h"
+#import "TMSDiscoverSectionViewModel.h"
 
 @interface TMSDiscoverViewController ()<IGListAdapterDataSource>
 @property(nonatomic, strong) TMSDiscoverViewModel *viewModel;
@@ -47,7 +49,18 @@
 }
 
 - (IGListSectionController *)listAdapter:(IGListAdapter *)listAdapter sectionControllerForObject:(id)object {
-    return [TMSDiscoverSectionController new];
+    
+//    return [object isKindOfClass:[TMSDiscoverSectionViewModel class]] ? [TMSDiscoverSectionController new] : [TMSCommentSectionController new];
+    
+    IGListSectionController *vc = nil;
+    if ([object isKindOfClass:[TMSDiscoverSectionViewModel class]]) {
+        vc = [TMSDiscoverSectionController new];
+    } else {
+        vc = [TMSCommentSectionController new];
+        vc.inset = UIEdgeInsetsMake(-2, cellPadding+42+cellItemInset, 0, cellPadding);
+    }
+    return vc;
+//    return [TMSCommentSectionController new];
 }
 
 - (nullable UIView *)emptyViewForListAdapter:(IGListAdapter *)listAdapter {

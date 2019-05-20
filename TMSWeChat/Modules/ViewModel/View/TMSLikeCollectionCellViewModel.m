@@ -10,6 +10,8 @@
 #import <NSAttributedString+YYText.h>
 
 @interface TMSLikeCollectionCellViewModel ()
+// 隐藏分割线
+@property(nonatomic, readwrite, assign) BOOL hiddenSeperateLine;
 // 点赞的用户
 @property (nonatomic, readwrite, copy) NSAttributedString *likeUserAttributedString;
 @end
@@ -26,6 +28,7 @@
         return;
     }
     self.likeUserAttributedString = [self setupAttributedString];
+    self.hiddenSeperateLine = self.discoverModel.comment_num == 0;
 }
 
 - (void)calculateCellHeight {

@@ -7,11 +7,15 @@
 //
 
 #import "TMSBaseCellViewModel.h"
+@class TMSCommentModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TMSCommentCollectionCellViewModel : TMSBaseCellViewModel
+// 评论
+@property (nonatomic, readonly, copy) NSAttributedString *commentAttributedString;
 
+- (instancetype)initWithCommentModel:(TMSCommentModel *)model;
 @end
 
 NS_ASSUME_NONNULL_END
