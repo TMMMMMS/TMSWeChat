@@ -47,6 +47,7 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <IGListKit.h>
 #import <MJExtension.h>
+#import <YYText.h>
 
 #import "TMSConstant.h"
 

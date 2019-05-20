@@ -7,6 +7,7 @@
 //
 
 #import "TMSDiscoverModel.h"
+#import <CommonCrypto/CommonRandom.h>
 
 @implementation TMSDiscoverModel
 + (NSDictionary *)mj_replacedKeyFromPropertyName {
@@ -25,9 +26,30 @@
 //////    return 1;
 //}
 
-- (NSInteger)likes_num {
+- (NSString *)like_user {
     
-    return arc4random() % 10;
+    if (_like_user.length == 0) {
+        NSMutableArray *userArray = [NSMutableArray array];
+        for (NSInteger i = 0; i < self.likes_num; i++) {
+            [userArray addObject:[self randomNoNumber:(arc4random() % 6 + 2)]];
+        }
+        _like_user = [userArray componentsJoinedByString:@"，"];
+    }
+    return _like_user;
+}
+
+// 生成l点赞的用户名
+- (NSString *)randomNoNumber: (int)len {
+    
+    char ch[len];
+    for (int index=0; index<len; index++) {
+        
+        int num = arc4random_uniform(58)+65;
+        if (num>90 && num<97) { num = num%90+65; }
+        ch[index] = num;
+    }
+    
+    return [[NSString alloc] initWithBytes:ch length:len encoding:NSUTF8StringEncoding];
 }
 
 - (NSInteger)numOfSection {

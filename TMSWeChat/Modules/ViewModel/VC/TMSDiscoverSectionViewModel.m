@@ -51,6 +51,12 @@
         timeModel.likeCommand = self.likeCommand;
         [cellModelsArray addObject:timeModel];
         
+        // 点赞section的viewModel
+        if (self.discoverModel.likes_num) {
+            TMSLikeCollectionCellViewModel *likeModel = [[TMSLikeCollectionCellViewModel alloc] initWithDiscoverModel:model];
+            [cellModelsArray addObject:likeModel];
+        }
+        
         self.cellViewModels = cellModelsArray.copy;
         
 //        /// 点赞

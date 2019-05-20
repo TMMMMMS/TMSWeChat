@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - support property
 // 分区个数，TMSDiscoverSectionController中使用
 @property(nonatomic, assign) NSInteger numOfSection;
+// 点赞的用户
+@property(nonatomic, copy) NSString *like_user;
 @end
 
 NS_ASSUME_NONNULL_END

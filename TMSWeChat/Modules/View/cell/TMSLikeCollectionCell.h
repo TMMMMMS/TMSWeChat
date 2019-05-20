@@ -8,10 +8,12 @@
 
 #import "TMSDiscoverCollectionCell.h"
 
+@class TMSLikeCollectionCellViewModel;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TMSLikeCollectionCell : TMSDiscoverCollectionCell
-
+@property(nonatomic, readonly, strong) TMSLikeCollectionCellViewModel *viewModel;
 @end
 
 NS_ASSUME_NONNULL_END

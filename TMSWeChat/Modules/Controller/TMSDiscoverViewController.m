@@ -69,7 +69,7 @@
     if (!_collectionView) {
         UICollectionViewFlowLayout *flow = [UICollectionViewFlowLayout new];
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
-        _collectionView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        _collectionView.backgroundColor = [UIColor whiteColor];
     }
     return _collectionView;
 }

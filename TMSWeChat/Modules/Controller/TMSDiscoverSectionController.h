@@ -13,8 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TMSDiscoverSectionController : IGListSectionController
-#warning 测试，是否通过- (void)didUpdateToObject:(id)object接收到viewModel
-//- (instancetype)initWithViewModel:(TMSDiscoverSectionViewModel *)viewModel;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -53,6 +53,7 @@
 			"top": "0",
 			"ui_type": "2",
 			"comment_num": "0",
+            "likes_num": "12",
 			"pics": "https:\/\/imgs.caixin.com\/2019-05-14\/1557805569058991.jpg"
 		}, {
 			"id": "535905",
@@ -79,6 +80,7 @@
 			"ui_type": "2",
 			"comment_num": "19",
             "pic_num": "4",
+            "likes_num": "8",
 			"pics": "https:\/\/imgs.caixin.com\/2019-05-14\/1557807470782377.jpg"
 		}, {
 			"id": "535922",
@@ -130,6 +132,7 @@
 			"top": "0",
 			"ui_type": "2",
 			"comment_num": "0",
+            "likes_num": "1",
 			"pics": "https:\/\/imgs.caixin.com\/2019-05-14\/1557814175385984.jpg"
 		}, {
 			"id": "535923",
@@ -330,6 +333,7 @@
 			"top": "0",
 			"ui_type": "2",
 			"comment_num": "2",
+            "likes_num": "2",
 			"pics": "https:\/\/imgs.caixin.com\/2019-05-14\/1557792442358818.jpg"
 		}, {
 			"id": "1292",

@@ -16,13 +16,6 @@
 @end
 
 @implementation TMSDiscoverSectionController
-//- (instancetype)initWithViewModel:(TMSDiscoverSectionViewModel *)viewModel {
-//
-//    if (self == [super init]) {
-//        self.viewModel = viewModel;
-//    }
-//    return self;
-//}
 
 - (NSInteger)numberOfItems {
     

@@ -11,5 +11,6 @@ pod 'ReactiveObjC'
 pod 'MJExtension'
 pod 'Masonry'
 pod 'IGListKit'
+pod 'YYText'
 
 end

@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TMSLikeCollectionCellViewModel : TMSBaseCellViewModel
-
+// 点赞的用户
+@property (nonatomic, readonly, copy) NSAttributedString *likeUserAttributedString;
 @end
 
 NS_ASSUME_NONNULL_END
