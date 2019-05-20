@@ -121,9 +121,11 @@
     
     if (!_singalView) {
         _singalView = [[UIView alloc] init];
+        _singalView.backgroundColor = [UIColor blackColor];
         _singalView.hidden = YES;
         
         UIImageView *img = [[UIImageView alloc] init];
+        img.image = TMSImageNamed(@"cat1");
         img.contentMode = UIViewContentModeScaleAspectFit;
         [_singalView addSubview:img];
         [img mas_makeConstraints:^(MASConstraintMaker *make) {

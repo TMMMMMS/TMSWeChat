@@ -91,7 +91,7 @@
     
     self.picView = [[TMSPicView alloc] init];
     self.picView.hidden = YES;
-    self.picView.backgroundColor = [UIColor blackColor];
+//    self.picView.backgroundColor = [UIColor blackColor];
     [self.contentView addSubview:self.picView];
     [self.picView mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.left.equalTo(self.nameLabel);
