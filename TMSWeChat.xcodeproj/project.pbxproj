@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A2A49812296581800A70237 /* TMSHandleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A49802296581800A70237 /* TMSHandleView.m */; };
 		1A2DB63A228FD43C00378AFD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2DB639228FD43C00378AFD /* AppDelegate.m */; };
 		1A2DB640228FD43C00378AFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2DB63E228FD43C00378AFD /* Main.storyboard */; };
 		1A2DB642228FD43E00378AFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2DB641228FD43E00378AFD /* Assets.xcassets */; };
@@ -37,6 +38,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A2A497F2296581800A70237 /* TMSHandleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMSHandleView.h; sourceTree = "<group>"; };
+		1A2A49802296581800A70237 /* TMSHandleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMSHandleView.m; sourceTree = "<group>"; };
 		1A2DB635228FD43C00378AFD /* TMSWeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMSWeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2DB638228FD43C00378AFD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1A2DB639228FD43C00378AFD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -201,6 +204,8 @@
 				1A59B28722918F45006534DD /* cell */,
 				1A59B28822918F64006534DD /* TMSPicView.h */,
 				1A59B28922918F64006534DD /* TMSPicView.m */,
+				1A2A497F2296581800A70237 /* TMSHandleView.h */,
+				1A2A49802296581800A70237 /* TMSHandleView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -386,6 +391,7 @@
 				1AF44A972292801200CCC021 /* TMSCommentSectionViewModel.m in Sources */,
 				1A59B25C229116BA006534DD /* TMSDiscoverSectionViewModel.m in Sources */,
 				1A59B25622910DFB006534DD /* TMSDiscoverModel.m in Sources */,
+				1A2A49812296581800A70237 /* TMSHandleView.m in Sources */,
 				1A59B26B22912075006534DD /* TMSDiscoverCollectionCell.m in Sources */,
 				1A59B28A22918F64006534DD /* TMSPicView.m in Sources */,
 				1A59B27D22912755006534DD /* TMSContentCollectionCell.m in Sources */,

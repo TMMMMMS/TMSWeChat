@@ -25,6 +25,7 @@
 @property (nonatomic, readwrite, strong) RACSubject *didClickedPicSubject;
 
 /// cell 上的事件处理
+@property(nonatomic, readwrite, strong) RACSubject *clickActionSubject;
 // 点赞
 @property (nonatomic, readwrite, strong) RACCommand *likeCommand;
 // 评论
@@ -37,6 +38,10 @@
     if (self == [super init]) {
         self.discoverModel = model;
         
+        self.clickActionSubject = [RACSubject subject];
+        self.didClickedCommentSubject = [RACSubject subject];
+        self.clickActionSubject = [RACSubject subject];
+        
         NSMutableArray *cellModelsArray = [NSMutableArray array];
         
         /// 创建cell上的各个viewModel
@@ -47,6 +52,7 @@
         
         // 时间section的viewModel
         TMSTimeCollectionCellViewModel *timeModel = [[TMSTimeCollectionCellViewModel alloc] initWithDiscoverModel:model];
+        timeModel.clickActionSubject = self.clickActionSubject;
         timeModel.didClickedCommentSubject = self.didClickedCommentSubject;
         timeModel.likeCommand = self.likeCommand;
         [cellModelsArray addObject:timeModel];

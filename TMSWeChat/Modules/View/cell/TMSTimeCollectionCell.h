@@ -8,6 +8,7 @@
 
 #import "TMSDiscoverCollectionCell.h"
 @class TMSTimeCollectionCellViewModel;
+@class TMSTimeCollectionCell;
 
 NS_ASSUME_NONNULL_BEGIN
 

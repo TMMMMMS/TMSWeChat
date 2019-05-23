@@ -19,8 +19,7 @@
 - (void)initializeConfig {
     
     [super initializeConfig];
-    
-    self.didClickedCommentSubject = [RACSubject subject];
+
 }
 
 - (void)calculateCellHeight {

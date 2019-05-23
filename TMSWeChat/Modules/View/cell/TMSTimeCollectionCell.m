@@ -25,7 +25,8 @@
         @weakify(self)
         [[self.actionBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self)
-            TLog(@"点击了按钮");
+            [self.viewModel.clickActionSubject sendNext:self.viewModel];
+            [self.viewModel.clickActionSubject sendNext:x];
         }];
     }
     return self;
@@ -57,6 +58,7 @@
     [self.actionBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(@(-cellPadding));
         make.centerY.equalTo(self.contentView);
+        
     }];
 }
 @end

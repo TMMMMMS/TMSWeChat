@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TMSTimeCollectionCellViewModel : TMSBaseCellViewModel
 
+@property(nonatomic, readwrite, strong) RACSubject *clickActionSubject;
 /// cell 上的事件处理
 // 点赞
 @property (nonatomic, readwrite, strong) RACCommand *likeCommand;

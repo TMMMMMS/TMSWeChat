@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, strong) RACSubject *didClickedPicSubject;
 
 /// DateCell 上的事件处理
+@property(nonatomic, readonly, strong) RACSubject *clickActionSubject;
 // 点赞
 @property (nonatomic, readonly, strong) RACCommand *likeCommand;
 // 评论
