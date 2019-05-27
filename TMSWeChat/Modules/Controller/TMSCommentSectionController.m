@@ -18,9 +18,33 @@
 
 @implementation TMSCommentSectionController
 
+- (instancetype)init {
+    
+    if (self == [super init]) {
+        
+        [[[NSNotificationCenter defaultCenter] rac_addObserverForName:@"RefreshDatas" object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+           
+            TMSCommentSectionViewModel *model = x.object;
+            if (model == self.viewModel) {
+//                TLog(@"需要刷新评论");
+                [self.collectionContext performBatchAnimated:YES updates:^(id<IGListBatchContext>  _Nonnull batchContext) {
+                    NSIndexSet *set = [NSIndexSet indexSetWithIndex:self.viewModel.comment_num - 1];
+                    [batchContext insertInSectionController:self atIndexes:set];
+                } completion:^(BOOL finished) {
+                    
+                }];
+                
+            }
+        }];
+        
+    }
+    return self;
+}
+
 - (NSInteger)numberOfItems {
     
     return self.viewModel.comment_num;
+    
 }
 
 - (CGSize)sizeForItemAtIndex:(NSInteger)index {
@@ -36,7 +60,7 @@
     
     TMSCommentCollectionCell *cell = [self.collectionContext dequeueReusableCellOfClass:[TMSCommentCollectionCell class] forSectionController:self atIndex:index];
     
-    [cell bindViewModel:viewModel];
+    [cell bindViewModel:viewModel isShowLine:(self.viewModel.discoverModel.likes_num && index == 0)];
     
     return cell;
 }

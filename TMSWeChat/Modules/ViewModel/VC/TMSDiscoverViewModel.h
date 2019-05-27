@@ -12,8 +12,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TMSDiscoverViewModel : NSObject
-@property(nonatomic, strong) NSMutableArray *discovers;
+@interface TMSDiscoverViewModel : NSObject <IGListDiffable>
+@property(nonatomic, readonly, strong) NSMutableArray *discovers;
 
 // 点击昵称
 @property (nonatomic, readonly, strong) RACSubject *didClickedNameSubject;

@@ -15,7 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface TMSDiscoverSectionViewModel : NSObject <IGListDiffable>
 @property(nonatomic, readonly, strong) TMSDiscoverModel *discoverModel;
 @property(nonatomic, readonly, strong) NSArray <TMSBaseCellViewModel *>* cellViewModels;
-//@property(nonatomic, readonly, assign) CGFloat cellHeight;
 
 /// ContentCell上的事件
 // 点击昵称

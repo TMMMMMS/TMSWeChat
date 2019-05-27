@@ -8,6 +8,7 @@
 
 #import "TMSDiscoverSectionController.h"
 #import "TMSDiscoverSectionViewModel.h"
+#import "TMSCommentSectionViewModel.h"
 #import "TMSDiscoverCollectionCell.h"
 #import "TMSBaseCellViewModel.h"
 

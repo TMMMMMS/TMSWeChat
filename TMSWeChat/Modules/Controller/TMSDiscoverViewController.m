@@ -18,6 +18,7 @@
 #import "TMSCommentModel.h"
 
 @interface TMSDiscoverViewController ()<IGListAdapterDataSource, UIScrollViewDelegate>
+
 @property(nonatomic, strong) TMSDiscoverViewModel *viewModel; // vc的viewModel
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, readwrite, strong) IGListAdapter *adapter;
@@ -53,45 +54,8 @@
     self.adapter.collectionView = self.collectionView;
     self.adapter.dataSource = self;
     
-//    if (@available(iOS 11.0, *)) {
-//        self.collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-//    }
-    
     [self.view addSubview:self.handleView];
     [self.view addSubview:self.inputView];
-
-    
-    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:@"RefreshDatas" object:nil] subscribeNext:^(NSNotification * _Nullable x) {
-//        TLog(@"刷新列表:%@", x);
-        if (![x.object isKindOfClass:[TMSCommentSectionViewModel class]]) {
-            TLog(@"出错了，接收到的类型异常");
-            return ;
-        }
-        
-//        __block NSInteger changeIndex = NSNotFound;
-//        TMSCommentSectionViewModel *commentModel = (TMSCommentSectionViewModel *)x.object;
-//        if (commentModel) {
-//            [self.viewModel.discovers enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//                if ([obj isKindOfClass:[TMSCommentSectionViewModel class]]) {
-//                    TMSCommentSectionViewModel *temp = (TMSCommentSectionViewModel *)obj;
-//                    if ([commentModel.discoverModel.ID isEqualToString:temp.discoverModel.ID]) {
-//                        changeIndex = idx;
-//                        *stop = YES;
-//                    }
-//                }
-//            }];
-//
-//            if (changeIndex != NSNotFound) {
-//                [self.viewModel.discovers replaceObjectAtIndex:changeIndex withObject:commentModel];
-//                //            [self.viewModel.discovers removeObjectAtIndex:changeIndex];
-//                [self.adapter performUpdatesAnimated:YES completion:nil];
-//            }
-//        }
-        
-        [self.adapter reloadDataWithCompletion:nil];
-        // 官方推荐使用该方法刷新列表，目前使用会造成崩溃，研究中
-//        [self.adapter performUpdatesAnimated:YES completion:nil];
-    }];
     
     @weakify(self)
     [self.viewModel.didClickedNameSubject subscribeNext:^(id  _Nullable x) {
@@ -167,9 +131,9 @@
                     
                     if ([model.discoverModel.ID isEqualToString:self.handleModel.discoverModel.ID]) {
                         
-                        TLog(@"添加了一条评论");
+//                        TLog(@"添加了一条评论");
                         [model addCommentModel:[[TMSCommentModel alloc] initComment:x]];
-                        [self.adapter reloadDataWithCompletion:nil];
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshDatas" object:model];
                         *stop = YES;
                     }
                 }
@@ -178,10 +142,6 @@
     }];
 }
 
-//- (void)viewDidLayoutSubviews{
-//    [super viewDidLayoutSubviews];
-//    self.collectionView.frame = CGRectMake(0, [UIApplication sharedApplication].statusBarFrame.size.height+44, SCREEN_WIDTH, SCREEN_HEIGHT - [UIApplication sharedApplication].statusBarFrame.size.height);
-//}
 
 - (NSArray<id <IGListDiffable>> *)objectsForListAdapter:(IGListAdapter *)listAdapter {
     return self.viewModel.discovers;

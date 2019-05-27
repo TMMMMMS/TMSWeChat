@@ -13,6 +13,8 @@
 
 @property(nonatomic, strong) YYLabel *commentLabel;
 
+@property(nonatomic, strong) UIView *line;
+
 @property(nonatomic, readwrite, strong) TMSCommentCollectionCellViewModel *viewModel;
 @end
 
@@ -26,11 +28,14 @@
     return self;
 }
 
-- (void)bindViewModel:(TMSCommentCollectionCellViewModel *)viewModel {
+- (void)bindViewModel:(TMSCommentCollectionCellViewModel *)viewModel isShowLine:(BOOL)isShowLine {
     
     self.viewModel = viewModel;
     
+    self.line.hidden = !isShowLine;
+    
     self.commentLabel.attributedText = viewModel.commentAttributedString;
+    
 }
 
 - (void)configViews {
@@ -45,6 +50,15 @@
     [self.commentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.inset(cellItemInset);
         make.top.equalTo(@5);
+    }];
+    
+    self.line = [[UIView alloc] init];
+    self.line.backgroundColor = RGB(211, 211, 213, 1);
+    self.line.hidden = YES;
+    [self.contentView addSubview:self.line];
+    [self.line mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.equalTo(self.contentView);
+        make.height.equalTo(@0.5);
     }];
 }
 @end

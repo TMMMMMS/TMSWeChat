@@ -12,6 +12,7 @@
 #import "TMSDiscoverModel.h"
 
 @interface TMSDiscoverViewModel ()
+@property(nonatomic, readwrite, strong) NSMutableArray *discovers;
 // 点击昵称
 @property (nonatomic, readwrite, strong) RACSubject *didClickedNameSubject;
 // 点击照片
@@ -65,5 +66,14 @@
     [self.discovers addObjectsFromArray:itemArray.copy];;
 }
 
+- (nonnull id<NSObject>)diffIdentifier {
+    return self;
+}
+
+- (BOOL)isEqualToDiffableObject:(nullable id<IGListDiffable>)object {
+    
+    return [self isEqual:object];
+    
+}
 
 @end

@@ -13,6 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TMSCommentCollectionCell : TMSDiscoverCollectionCell
 @property(nonatomic, readonly, strong) TMSCommentCollectionCellViewModel *viewModel;
+
+- (void)bindViewModel:(TMSCommentCollectionCellViewModel *)viewModel isShowLine:(BOOL)isShowLine;
+
 @end
 
 NS_ASSUME_NONNULL_END

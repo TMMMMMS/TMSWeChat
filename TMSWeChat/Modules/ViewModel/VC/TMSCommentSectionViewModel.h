@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithDiscoverModel:(TMSDiscoverModel *)model;
 
-// 模拟添加了一条评论
+// 添加了一条评论
 - (void)addCommentModel:(TMSCommentModel *)model;
 @end
 

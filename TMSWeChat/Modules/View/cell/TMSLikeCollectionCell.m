@@ -11,7 +11,6 @@
 
 @interface TMSLikeCollectionCell ()
 @property(nonatomic, strong) YYLabel *likeLabel;
-@property(nonatomic, strong) UIView *line;
 @property(nonatomic, readwrite, strong) TMSLikeCollectionCellViewModel *viewModel;
 @end
 
@@ -30,7 +29,6 @@
     self.viewModel = viewModel;
     
     self.likeLabel.attributedText = viewModel.likeUserAttributedString;
-    self.line.hidden = viewModel.hiddenSeperateLine;
 }
 
 - (void)configViews {
@@ -67,14 +65,6 @@
         make.bottom.equalTo(container).offset(-6);
     }];
     
-    self.line = [[UIView alloc] init];
-    self.line.backgroundColor = RGB(211, 211, 213, 1);
-    self.line.hidden = YES;
-    [container addSubview:self.line];
-    [self.line mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.equalTo(container);
-        make.height.equalTo(@0.5);
-    }];
 }
 
 @end
