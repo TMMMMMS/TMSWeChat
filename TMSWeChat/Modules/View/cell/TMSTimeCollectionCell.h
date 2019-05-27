@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TMSTimeCollectionCell : TMSDiscoverCollectionCell
 @property(nonatomic, readonly, strong) TMSTimeCollectionCellViewModel *viewModel;
+
 @end
 
 NS_ASSUME_NONNULL_END

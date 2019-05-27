@@ -16,9 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, readonly, strong) TMSTimeCollectionCellViewModel *viewModel;
 
 + (instancetype)shareInstance;
-- (void)bindViewModel:(TMSTimeCollectionCellViewModel *)viewModel;
-- (void)showAnimation;
-- (void)hideAnimation;
+- (void)bindViewModel:(TMSTimeCollectionCellViewModel * __nullable)viewModel;
 @end
 
 NS_ASSUME_NONNULL_END

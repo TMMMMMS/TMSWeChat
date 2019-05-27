@@ -14,10 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic, readwrite, strong) RACSubject *clickActionSubject;
 /// cell 上的事件处理
-// 点赞
+// 点赞action
 @property (nonatomic, readwrite, strong) RACCommand *likeCommand;
-// 评论
+// 评论action
 @property (nonatomic, readwrite, strong) RACSubject *didClickedCommentSubject;
+// 添加评论
+@property (nonatomic, readwrite, strong) RACSubject *addCommentSubject;
 
 @end
 

@@ -26,6 +26,11 @@
     return self;
 }
 
+- (void)tapGesture:(UITapGestureRecognizer *)gesture {
+    
+    [self.viewModel.didClickedPicSubject sendNext:nil];
+}
+
 - (void)configViews {
     
     [self addSubview:self.singalView];
@@ -125,8 +130,10 @@
         _singalView.hidden = YES;
         
         UIImageView *img = [[UIImageView alloc] init];
+        img.userInteractionEnabled = YES;
         img.image = TMSImageNamed(@"cat1");
         img.contentMode = UIViewContentModeScaleAspectFit;
+        [img addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)]];
         [_singalView addSubview:img];
         [img mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.top.equalTo(self.singalView);
@@ -147,7 +154,9 @@
         for (NSInteger i = 0; i < 4; i++) {
             
             UIImageView *img = [[UIImageView alloc] init];
+            img.userInteractionEnabled = YES;
             img.contentMode = UIViewContentModeScaleAspectFill;
+            [img addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)]];
             [_doubleView addSubview:img];
             [img mas_makeConstraints:^(MASConstraintMaker *make) {
                 if (lastImg) {
@@ -181,8 +190,10 @@
         for (NSInteger i = 0; i < 9; i++) {
             
             UIImageView *img = [[UIImageView alloc] init];
+            img.userInteractionEnabled = YES;
             img.contentMode = UIViewContentModeScaleAspectFill;
             [_normalTypeView addSubview:img];
+            [img addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)]];
             [img mas_makeConstraints:^(MASConstraintMaker *make) {
                 if (lastImg) {
                     if (i % 3 == 0) {

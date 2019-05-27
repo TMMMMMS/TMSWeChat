@@ -12,6 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TMSDiscoverViewController : UIViewController
+@property (nonatomic, readonly, strong) IGListAdapter *adapter;
 - (instancetype)initWtihViewModel:(TMSDiscoverViewModel *)viewModel;
 @end
 

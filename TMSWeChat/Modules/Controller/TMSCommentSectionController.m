@@ -13,6 +13,7 @@
 
 @interface TMSCommentSectionController ()
 @property(nonatomic, strong) TMSCommentSectionViewModel *viewModel;
+
 @end
 
 @implementation TMSCommentSectionController
@@ -41,11 +42,13 @@
 }
 
 - (void)didUpdateToObject:(id)object {
+    
     self.viewModel = object;
 }
 
 - (void)didSelectItemAtIndex:(NSInteger)index {
     
+    TLog(@"点击了评论");
 }
 
 @end

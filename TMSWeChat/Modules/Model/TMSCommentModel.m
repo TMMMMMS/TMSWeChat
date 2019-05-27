@@ -18,6 +18,16 @@
     return @{@"ID": @"id"};
 }
 
+- (instancetype)initComment:(NSString *)comment {
+    
+    if (self == [super init]) {
+        self.comment = comment;
+        self.from = @"TMS";
+        self.ID = [NSString stringWithFormat:@"%u", arc4random() % 500 + 500];
+    }
+    return self;
+}
+
 - (NSString *)showComment{
     
     if (!_showComment) {

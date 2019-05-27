@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark Support Property
 // 展示到cell上的文字，用于富文本的处理
 @property(nonatomic, readonly, copy) NSString *showComment;
+
+- (instancetype)initComment:(NSString *)comment;
 @end
 
 NS_ASSUME_NONNULL_END

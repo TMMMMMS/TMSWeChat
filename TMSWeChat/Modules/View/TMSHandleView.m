@@ -30,11 +30,10 @@ static TMSHandleView *_instance = nil;
     return self;
 }
 
-- (void)bindViewModel:(TMSTimeCollectionCellViewModel *)viewModel {
+- (void)bindViewModel:(TMSTimeCollectionCellViewModel *__nullable)viewModel {
     
-    if (viewModel == self.viewModel) {
+    if (viewModel == self.viewModel || viewModel == nil) {
 //        self.hidden = YES;
-        [self hideAnimation];
         self.viewModel = nil;
         return;
     }
@@ -43,16 +42,6 @@ static TMSHandleView *_instance = nil;
     
     self.likeBtn.selected = NO;
 //    self.likeBtn.selected = viewModel.discoverModel.li
-}
-
-- (void)showAnimation {
-    
-    
-}
-
-- (void)hideAnimation {
-    
-    
 }
 
 - (void)configViews {
@@ -81,7 +70,7 @@ static TMSHandleView *_instance = nil;
     @weakify(self)
     [[self.commentBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
        @strongify(self)
-        [self.viewModel.didClickedCommentSubject sendNext:@1];
+        [self.viewModel.didClickedCommentSubject sendNext:self.viewModel];
     }];
     [self.commentBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.top.bottom.equalTo(self);

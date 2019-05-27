@@ -19,17 +19,8 @@
 @property(nonatomic, readwrite, assign) CGFloat cellHeight;
 
 /// ContentCell上的事件
-// 点击昵称
-@property (nonatomic, readwrite, strong) RACSubject *didClickedNameSubject;
-// 点击照片
-@property (nonatomic, readwrite, strong) RACSubject *didClickedPicSubject;
-
-/// cell 上的事件处理
-@property(nonatomic, readwrite, strong) RACSubject *clickActionSubject;
 // 点赞
 @property (nonatomic, readwrite, strong) RACCommand *likeCommand;
-// 评论
-@property (nonatomic, readwrite, strong) RACSubject *didClickedCommentSubject;
 @end
 
 @implementation TMSDiscoverSectionViewModel
@@ -37,24 +28,20 @@
     
     if (self == [super init]) {
         self.discoverModel = model;
-        
-        self.clickActionSubject = [RACSubject subject];
-        self.didClickedCommentSubject = [RACSubject subject];
-        self.clickActionSubject = [RACSubject subject];
+
+        self.addCommentSubject = [RACSubject subject];
         
         NSMutableArray *cellModelsArray = [NSMutableArray array];
         
         /// 创建cell上的各个viewModel
         TMSContentCollectionCellViewModel *contentModel = [[TMSContentCollectionCellViewModel alloc] initWithDiscoverModel:model];
-        contentModel.didClickedNameSubject = self.didClickedNameSubject;
         contentModel.didClickedPicSubject = self.didClickedPicSubject;
         [cellModelsArray addObject:contentModel];
         
         // 时间section的viewModel
         TMSTimeCollectionCellViewModel *timeModel = [[TMSTimeCollectionCellViewModel alloc] initWithDiscoverModel:model];
-        timeModel.clickActionSubject = self.clickActionSubject;
-        timeModel.didClickedCommentSubject = self.didClickedCommentSubject;
         timeModel.likeCommand = self.likeCommand;
+        timeModel.addCommentSubject = self.addCommentSubject;
         [cellModelsArray addObject:timeModel];
         
         // 点赞section的viewModel
@@ -83,6 +70,37 @@
 //        }];
     }
     return self;
+}
+
+- (void)setDidClickedNameSubject:(RACSubject *)didClickedNameSubject {
+    
+    _didClickedNameSubject = didClickedNameSubject;
+    
+    TMSContentCollectionCellViewModel *model = (TMSContentCollectionCellViewModel *)[self.cellViewModels objectAtIndex:0];
+    model.didClickedNameSubject = didClickedNameSubject;
+}
+
+- (void)setDidClickedPicSubject:(RACSubject *)didClickedPicSubject {
+    
+    _didClickedPicSubject = didClickedPicSubject;
+    
+    TMSContentCollectionCellViewModel *model = (TMSContentCollectionCellViewModel *)[self.cellViewModels objectAtIndex:0];
+    model.didClickedPicSubject = didClickedPicSubject;
+}
+
+- (void)setClickActionSubject:(RACSubject *)clickActionSubject {
+    
+    _clickActionSubject = clickActionSubject;
+    
+    TMSTimeCollectionCellViewModel *model = (TMSTimeCollectionCellViewModel *)[self.cellViewModels objectAtIndex:1];
+    model.clickActionSubject = clickActionSubject;
+}
+
+- (void)setDidClickedCommentSubject:(RACSubject *)didClickedCommentSubject {
+    
+    _didClickedCommentSubject = didClickedCommentSubject;
+    TMSTimeCollectionCellViewModel *model = (TMSTimeCollectionCellViewModel *)[self.cellViewModels objectAtIndex:1];
+    model.didClickedCommentSubject = didClickedCommentSubject;
 }
 
 - (nonnull id<NSObject>)diffIdentifier {

@@ -56,6 +56,11 @@
     }
 }
 
+- (void)tapGesture:(UITapGestureRecognizer *)gesture {
+    
+    [self.viewModel.didClickedNameSubject sendNext:self.viewModel.discoverModel.author_name];
+}
+
 - (void)configViews {
     
     self.avatar = [[UIImageView alloc] init];
@@ -73,7 +78,9 @@
     self.nameLabel = [[UILabel alloc] init];
     self.nameLabel.font = [UIFont systemFontOfSize:13 weight:UIFontWeightHeavy];
     self.nameLabel.textColor = RGB(90, 106, 144, 1);
+    self.nameLabel.userInteractionEnabled = YES;
     [self.contentView addSubview:self.nameLabel];
+    [self.nameLabel addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)]];
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.avatar);
         make.left.equalTo(self.avatar.mas_right).offset(cellPadding);

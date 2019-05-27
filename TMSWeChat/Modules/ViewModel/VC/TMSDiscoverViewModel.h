@@ -13,7 +13,16 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TMSDiscoverViewModel : NSObject
-@property(nonatomic, readonly, strong) NSArray *discovers;
+@property(nonatomic, strong) NSMutableArray *discovers;
+
+// 点击昵称
+@property (nonatomic, readonly, strong) RACSubject *didClickedNameSubject;
+// 点击照片
+@property (nonatomic, readonly, strong) RACSubject *didClickedPicSubject;
+/// DateCell 上的事件处理
+@property(nonatomic, readonly, strong) RACSubject *clickActionSubject;
+// 评论
+@property (nonatomic, readonly, strong) RACSubject *didClickedCommentSubject;
 @end
 
 NS_ASSUME_NONNULL_END

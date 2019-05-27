@@ -4,6 +4,7 @@ PODS:
   - IGListKit/Default (3.4.0):
     - IGListKit/Diffing
   - IGListKit/Diffing (3.4.0)
+  - IQKeyboardManager (6.2.0)
   - Masonry (1.1.0)
   - MJExtension (3.0.15.1)
   - ReactiveObjC (3.1.0)
@@ -11,6 +12,7 @@ PODS:
 
 DEPENDENCIES:
   - IGListKit
+  - IQKeyboardManager
   - Masonry
   - MJExtension
   - ReactiveObjC
@@ -19,6 +21,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - IGListKit
+    - IQKeyboardManager
     - Masonry
     - MJExtension
     - ReactiveObjC
@@ -26,11 +29,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   IGListKit: 7a5d788e9fb746bcd402baa8e8b24bc3bd2a5a07
+  IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 3f54c82a811b25484644cbb6bf163ac28ca58dad
+PODFILE CHECKSUM: b0a2064383b2d05a3ba2f4bba1c6ac66765cf4d2
 
 COCOAPODS: 1.5.0

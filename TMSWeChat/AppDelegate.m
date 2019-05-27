@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "TMSDiscoverViewModel.h"
 #import "TMSDiscoverViewController.h"
+#import <IQKeyboardManager.h>
 
 @interface AppDelegate ()
 
@@ -18,6 +19,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
+    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     

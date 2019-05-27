@@ -7,19 +7,26 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TMSDiscoverModel.h"
 
 @class TMSDiscoverModel;
+@class TMSCommentModel;
 @class TMSCommentCollectionCellViewModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TMSCommentSectionViewModel : NSObject <IGListDiffable>
 
+@property(nonatomic, readonly, strong) TMSDiscoverModel *discoverModel;
+
 @property(nonatomic, readonly, assign) NSInteger comment_num;
 // cell的viewModel
-@property(nonatomic, readonly, strong) NSArray <TMSCommentCollectionCellViewModel *>* viewModels;
+@property(nonatomic, readonly, strong) NSMutableArray <TMSCommentCollectionCellViewModel *>* viewModels;
 
 - (instancetype)initWithDiscoverModel:(TMSDiscoverModel *)model;
+
+// 模拟添加了一条评论
+- (void)addCommentModel:(TMSCommentModel *)model;
 @end
 
 NS_ASSUME_NONNULL_END

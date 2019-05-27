@@ -25,8 +25,8 @@
         @weakify(self)
         [[self.actionBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self)
-            [self.viewModel.clickActionSubject sendNext:self.viewModel];
-            [self.viewModel.clickActionSubject sendNext:x];
+            
+            [self.viewModel.clickActionSubject sendNext:@{@"model":self.viewModel, @"button":x}];
         }];
     }
     return self;

@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A28408D22967BC9004FF03F /* TMSHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28408C22967BC9004FF03F /* TMSHelper.m */; };
 		1A2A49812296581800A70237 /* TMSHandleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A49802296581800A70237 /* TMSHandleView.m */; };
+		1A2A4984229678EC00A70237 /* TMSInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A4983229678EC00A70237 /* TMSInputView.m */; };
 		1A2DB63A228FD43C00378AFD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2DB639228FD43C00378AFD /* AppDelegate.m */; };
 		1A2DB640228FD43C00378AFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2DB63E228FD43C00378AFD /* Main.storyboard */; };
 		1A2DB642228FD43E00378AFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2DB641228FD43E00378AFD /* Assets.xcassets */; };
@@ -38,8 +40,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A28408B22967BC9004FF03F /* TMSHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMSHelper.h; sourceTree = "<group>"; };
+		1A28408C22967BC9004FF03F /* TMSHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMSHelper.m; sourceTree = "<group>"; };
 		1A2A497F2296581800A70237 /* TMSHandleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMSHandleView.h; sourceTree = "<group>"; };
 		1A2A49802296581800A70237 /* TMSHandleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMSHandleView.m; sourceTree = "<group>"; };
+		1A2A4982229678EC00A70237 /* TMSInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMSInputView.h; sourceTree = "<group>"; };
+		1A2A4983229678EC00A70237 /* TMSInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMSInputView.m; sourceTree = "<group>"; };
 		1A2DB635228FD43C00378AFD /* TMSWeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMSWeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2DB638228FD43C00378AFD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1A2DB639228FD43C00378AFD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -174,6 +180,8 @@
 		1A2DB650228FDDED00378AFD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				1A28408B22967BC9004FF03F /* TMSHelper.h */,
+				1A28408C22967BC9004FF03F /* TMSHelper.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -206,6 +214,8 @@
 				1A59B28922918F64006534DD /* TMSPicView.m */,
 				1A2A497F2296581800A70237 /* TMSHandleView.h */,
 				1A2A49802296581800A70237 /* TMSHandleView.m */,
+				1A2A4982229678EC00A70237 /* TMSInputView.h */,
+				1A2A4983229678EC00A70237 /* TMSInputView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -299,6 +309,7 @@
 				1A2DB631228FD43C00378AFD /* Sources */,
 				1A2DB632228FD43C00378AFD /* Frameworks */,
 				1A2DB633228FD43C00378AFD /* Resources */,
+				425962DBD8E399C06857B231 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -375,6 +386,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		425962DBD8E399C06857B231 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TMSWeChat/Pods-TMSWeChat-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TMSWeChat/Pods-TMSWeChat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -382,6 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A28408D22967BC9004FF03F /* TMSHelper.m in Sources */,
 				1A59B25322910D0D006534DD /* TMSDiscoverViewModel.m in Sources */,
 				1A59B28022912767006534DD /* TMSTimeCollectionCell.m in Sources */,
 				1A59B28622912788006534DD /* TMSCommentCollectionCell.m in Sources */,
@@ -398,6 +428,7 @@
 				1A59B28322912776006534DD /* TMSLikeCollectionCell.m in Sources */,
 				1A59B271229126CC006534DD /* TMSContentCollectionCellViewModel.m in Sources */,
 				1A59B274229126E9006534DD /* TMSTimeCollectionCellViewModel.m in Sources */,
+				1A2A4984229678EC00A70237 /* TMSInputView.m in Sources */,
 				1A2DB63A228FD43C00378AFD /* AppDelegate.m in Sources */,
 				1A59B26E22912532006534DD /* TMSBaseCellViewModel.m in Sources */,
 				1AF44A9422927F9F00CCC021 /* TMSCommentModel.m in Sources */,
@@ -550,6 +581,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4ULAYENZ77;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TMSWeChat/Constant/PrefixHeader.pch";
 				INFOPLIST_FILE = "TMSWeChat/Supporting Files/Info.plist";
@@ -570,6 +602,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4ULAYENZ77;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TMSWeChat/Constant/PrefixHeader.pch";
 				INFOPLIST_FILE = "TMSWeChat/Supporting Files/Info.plist";
